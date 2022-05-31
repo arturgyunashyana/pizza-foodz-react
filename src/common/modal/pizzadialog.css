@@ -1,0 +1,69 @@
+.modal-pizza {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    background-color: rgba(41, 41, 41, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.modal-container {
+    width: 600px;
+    height: 80vh;
+    cursor: pointer;
+}
+
+.modal-container .pizza-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hoddog-burgers {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modalimg-icons {
+    position: absolute;
+    right: 100px;
+    top: 50px;
+    display: flex;
+    column-gap: 20px;
+}
+
+.modalimg-icons__search {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease;
+}
+
+.modalimg-icons__search:hover {
+    background: #ccc;
+}
+
+.modalimg-icons__close {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease;
+}
+
+.modalimg-icons__close:hover {
+    background: #ccc;
+}

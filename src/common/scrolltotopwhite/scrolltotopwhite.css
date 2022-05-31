@@ -1,0 +1,17 @@
+.scroll-to-top-white {
+    width:50px;
+    height:50px;
+    border-radius: 10px;
+    position: fixed;
+    right: 80px;
+    bottom: 80px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#arrow-black{
+    font-size: 20px;
+    color:#000;
+}

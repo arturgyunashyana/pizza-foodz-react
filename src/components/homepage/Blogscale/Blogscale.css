@@ -1,0 +1,69 @@
+.blogscale {
+    width:100%;
+    background-image: url('../../../assets/images/greyimg.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-top: 40px;
+}
+
+.blogscale__container {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.imgjapanesesushi{
+    position: relative;
+}
+
+.imgburger{
+    position: relative;
+    overflow: hidden;
+}
+
+.bigburger{
+    transition:.5s;
+}
+
+.bigburger:hover{
+    transform: scale(1.1);
+}
+
+.imgjapanesesushi{
+    position: relative;
+    overflow: hidden;
+}
+
+.japanesesushi{
+    transition:.5s;
+}
+
+.japanesesushi:hover{
+    transform: scale(1.1);
+}
+
+.hreftext1{
+    position:absolute;
+    right:5%;
+    bottom:20px;
+    color:#fff;
+    text-align: end;
+}
+
+.text1 h1:first-child{
+     color:#FFFFF8;
+}
+
+#readmore1{
+    text-decoration: none;
+    color:#fff;
+    border-bottom: 2px solid #fff;
+    font-size:13px;
+    font-weight: 600;
+    padding:5px 0;
+}
+
+
+

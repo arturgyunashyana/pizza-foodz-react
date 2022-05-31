@@ -1,0 +1,16 @@
+.btn1{
+    width:180px;
+    height:50px;
+    background-color: rgb(209, 51, 60);
+    color:#fff;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-top:10px;
+    transition: 0.5s ease;
+}
+
+.btn1:hover {
+    background-color: #222635;
+}

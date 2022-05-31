@@ -1,0 +1,46 @@
+.testimonials {
+    width: 100%;
+    padding: 55px 0;
+    background-color: #1c2230;
+}
+
+.testimonials__container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.testimonials-title {
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+    font-size: 31px;
+    margin: 0 20px 50px 20px;
+}
+
+.slider-slick {
+    text-align: center;
+}
+
+.slider-slick-content {
+    max-width: 680px;
+}
+
+.slider-slick-name {
+    display: inline-block;
+    color: #fff;
+    font-weight: 700;
+}
+
+.slider-slick-fon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.slider-slick-text {
+    font-size: 22px;
+    line-height: 37px;
+    color: #D0D4DA;
+}
