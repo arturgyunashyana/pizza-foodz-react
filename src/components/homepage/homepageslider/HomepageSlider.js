@@ -26,29 +26,32 @@ function HomePageSlider() {
         }
     }
 
-    const moveDot = index => {
-        setSlideIndex(index)
-    }
-
-
 
     return (
         <div className="animate-slider">
-            {dataSlider.map((obj, index) => {
+            {dataSlider.map((obj, id) => {
                 return (
                     <div
-                        key={obj.id}
-                        className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
+                             key={obj.id}
+                             className={
+                             slideIndex === id + 1 ?
+                            "slide active-anim" : "slide"
+                            }
                     >
                         <img
-                            className="animate-slider-fon"
-                            src={`imgSlider/homepage-section1-bg${index + 1}.jpg`}
+                            className="animate-slider__fon"
+                            src={`imgSlider/homepage-section1-bg${id + 1}.jpg`}
+                            alt='section-bg'
                         />
-                                <div className="animate-slider-blog">
-                                    <div className="imgtextcontainer">
+                                <div className="animate-slider__blog">
+                                    <div className="animate-slider__container">
                                         <img src={obj.img} alt='img' />
-                                        <h1 className="setinfo2">{obj.title}</h1>
-                                        <h1 className="setinfo3">{obj.subtitle}</h1>
+                                        <h1 className="animate-slider__title">
+                                            {obj.title}
+                                        </h1>
+                                        <h1 className="animate-slider__subtitle">
+                                            {obj.subtitle}
+                                        </h1>
                                         <OrderRedBtn />
                                     </div>
                                 </div>
@@ -57,15 +60,6 @@ function HomePageSlider() {
             })}
             <BtnSlider moveSlide={nextSlide} direction={"next"} />
             <BtnSlider moveSlide={prevSlide} direction={"prev"}/>
-
-            <div className="container-dots">
-                {Array.from({length: 5}).map((item, index) => (
-                    <div
-                        onClick={() => moveDot(index + 1)}
-                        className={slideIndex === index + 1 ? "dot active" : "dot"}
-                    ></div>
-                ))}
-            </div>
         </div>
     )
 }

@@ -1,14 +1,14 @@
 import React from 'react'
-import './clicksearch.css'
+import './clicksearch.scss'
 
 function ClickSearch (props) {
 
     return (
-            <div className="clicksearch">
-                <span className="iconsspan-dark" onClick={props.toggle}>
+            <div className="clickSearch">
+                <span className="clickSearch__icon" onClick={props.toggle}>
                     <i className="fas fa-search"></i>
                 </span>
-                <span className="iconsspan-dark">
+                <span className="clickSearch__icon">
                     <i className="fas fa-heart"></i>
                 </span>
             </div>

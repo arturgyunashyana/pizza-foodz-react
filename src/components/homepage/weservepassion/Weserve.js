@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './Weserve.css';
+import './weserve.scss';
+import '../foodclickdark/react-slider.scss'
 import Slider from "react-slick";
 import PizzaBlanca from '../../../assets/images/tabsfoodsimages/pizzablack/pizzablancablack.webp'
 import PizzaVesuvio from '../../../assets/images/tabsfoodsimages/pizzablack/pizzavesuvioblack.jpg'
@@ -43,7 +44,7 @@ export default function Weserve() {
 
 
     const [modal, setModal] = useState(false);
-    const [selectedBurger, setSelectedBurger] = useState(null);
+    const [selectedBurger, setSelectedBurger] = useState(false);
     const [pizza, setPizza] = useState([
           {
             id: 1,
@@ -106,99 +107,96 @@ export default function Weserve() {
         prevArrow: <SamplePrevArrow />
     };
 
-
-
-
     return (
         <>
-        <div className="weparent">
-        <div className="weserve">
-            <div className="weserveone">
-
-                <div className="border-fon">
-                    <img class="border-img" src={BorderFon} alt="border-fon" />
+        <div className="weServe">
+        <div className="weServe__container">
+            <div className="weServe__contentFirst">
+                <div className="weServe__item">
+                    <img
+                         class="weServe__item-fon"
+                         src={BorderFon}
+                         alt="border-fon"
+                    />
                 </div>
-                <div className="imganime">
+                <div className="weServe__item-img">
                     <img src={Rak} />
                 </div>
-                <span className="fon-text">
+                <span className="weServe__fon-text">
                     <img src={TextFon} alt="text-fon" />
                 </span>
             </div>
 
-            <div className="weservetwo">
-                <h1 className="weservetwo-title">WE SERVE PASSION</h1>
-            <Slider {...settings}>
-         {pizza.map(item => {
-             return (
-                <div className="itemblog">
-                   <div className="itemblogimg">
-                       <img src={item.image} />
-                       <div className="clicksearch">
-                           <span className="iconsspan-dark"
-                                 onClick={() => toggle(item)}
-                           >
-                               <i className="fas fa-search"></i>
-                           </span>
+            <div className="weServe__contentSecond">
+                <h1 className="weServe__title">WE SERVE PASSION</h1>
+                <Slider {...settings}>
+                    {pizza.map(item => {
+                        return(
+                            <div className="slider__content">
+                                <div className="slider__image">
+                                    <img src={item.image} />
+                                    <div className="clickSearch">
+                                    <span
+                                        className="clickSearch__icon"
+                                        onClick={() => toggle(item)}
+                                    >
+                                        <i className="fas fa-search"></i>
+                                    </span>
 
-                           <span className="iconsspan-dark">
-                               <i className="fas fa-heart"></i>
-                           </span>
-                       </div>
-                   </div>
+                                        <span className="clickSearch__icon">
+                                        <i className="fas fa-heart"></i>
+                                    </span>
+                                    </div>
+                                </div>
+                                <div className="slider__info">
+                                    <div className="slider__row">
+                                        <a href="#" className="slider__row-title">
+                                            {item.name}
+                                        </a>
+                                    </div>
+                                    <div className="slider__row-text">
+                                        <p className="slider__row-paragraph">
+                                            Buffalo burgers have less
+                                            cholesterol and less fat
+                                        </p>
+                                    </div>
+                                    <div className="slider__row-more">
+                                        <span className="slider__row-addFirst">
 
-                   <div className="iteminfo">
-                    <h2 className="iteminfo-title">{item.name}</h2>
-                    <span className="more">
-                    <img className="more-fon" src={item.fon} />
-                    <i className="excalation fa fa-exclamation-circle"></i>
-                    </span>
-                    <p id="lorem">Garlic Flatbread with Mozzarela Parmesan-Garlic-Rosemary</p>
+                                        </span>
+                                        <span className="slider__row-addSecond">
 
-                    <label>Crust</label><br></br>
-                    <select>
-                        <option>Choose an option</option>
-                        <option>thik</option>
-                        <option>thin</option>
-                    </select><br></br>
+                                        </span>
+                                    </div>
+                                    <span className="slider__row-price">
+                                        {item.price}
+                                    </span>
+                                    <button type="button" className="slider__btn">
+                                        <i className="cart fas fa-shopping-bag"></i>
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        )
+                    })}
+                </Slider>
 
-                    <label>Size</label><br></br>
-                    <select>
-                        <option>Choose an option</option>
-                        <option>25cm</option>
-                        <option>30cm</option>
-                        <option>35cm</option>
-                    </select>
-
-                    <h3 id="leal">$13.99</h3>
-                       <button type="button" id="btn2">
-                           <i className="cart fas fa-shopping-bag"></i>
-                           Add to Cart
-                       </button>
-                </div>
-
-                </div>
-             )
-         })}
-
-
-        </Slider>
-         </div>
+            </div>
            {modal && (
-               <div className="modal-burgers" onClick={() => setModal(false)}>
-                   <div className="modal-container1">
+               <div className="dialog" onClick={() => setModal(false)}>
+                   <div className="dialog__container">
                        <img
-                           className="burger-img"
+                           className="dialog__image"
                            src={selectedBurger.image}
                            alt={selectedBurger.name}
                        />
                    </div>
 
-                   <div className="modalimg-icons">
-                <span className="modalimg-icons__search">
+                   <div className="dialog__icons">
+                <span className="dialog__icons-search">
                     <img src={SearchIcon} alt={SearchIcon} />
                 </span>
-                       <span className="modalimg-icons__close">
+                       <span className="dialog__icons-close">
                     <img src={CloseIcon} alt={CloseIcon} />
                 </span>
                    </div>

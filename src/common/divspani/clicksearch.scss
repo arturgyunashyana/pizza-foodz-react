@@ -1,0 +1,31 @@
+.clickSearch {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+    bottom: 70%;
+    left: 2%;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 4px;
+    &__icon {
+        width: 40px;
+        padding: 15px 12px;
+        margin: 0 5px;
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 20px;
+        background-color: #1A2131;
+        cursor: pointer;
+        i {
+            text-align: center;
+            cursor: pointer;
+            color:#fff;
+            &:hover {
+                color: grey;
+            }
+        }
+    }
+}

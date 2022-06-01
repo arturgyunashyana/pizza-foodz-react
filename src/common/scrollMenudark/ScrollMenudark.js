@@ -6,7 +6,7 @@ import noodlesIcon from '../../assets/images/noodles-icon.svg';
 import steaksIcon from '../../assets/images/steaks-icon.svg';
 import dessertsIcon from '../../assets/images/desserts-icon.svg';
 import drinksIcon from '../../assets/images/drinks-icon.svg';
-import './scrollmenudark.css'
+import './scrollmenudark.scss'
 
 export default function ScrollMenuDark () {
 
@@ -25,45 +25,46 @@ export default function ScrollMenuDark () {
 
     return (
         <div className={`scrollmenu ${showScroll ? "open" : ""} `}>
-            <div className='itemsscrollparent'>
-                <div className="blog1itemscroll">
-            <span className="item3">
-                <img src={pizzaIcon } />
-                <a className="item3_link" href="#">Pizza</a>
-            </span>
+            <div className='scrollmenu__container'>
+                <div className="scrollmenu__nav">
 
-                    <span className="item3">
-                <img src={burgersIcon} />
-                <a className='item3_link' href="#">Burgers</a>
-            </span>
+                    <span className="scrollmenu__item">
+                        <img src={pizzaIcon } />
+                        <a className="scrollmenu__link" href="#">Pizza</a>
+                    </span>
 
-                    <span className="item3">
-                <img src={sushiIcon} />
-                <a className="item3_link" href="#">Sushi</a>
-            </span>
+                    <span className="scrollmenu__item">
+                        <img src={burgersIcon} />
+                        <a className='scrollmenu__link' href="#">Burgers</a>
+                    </span>
 
-                    <span className="item3">
-                <img src={noodlesIcon} />
-                <a className="item3_link" href="#">Noodles</a>
-            </span>
+                    <span className="scrollmenu__item">
+                        <img src={sushiIcon} />
+                        <a className="scrollmenu__link" href="#">Sushi</a>
+                    </span>
 
-                    <span className="item3">
-                <img src={steaksIcon} />
-                <a className="item3_link" href="#">Steaks</a>
-            </span>
+                    <span className="scrollmenu__item">
+                        <img src={noodlesIcon} />
+                        <a className="scrollmenu__link" href="#">Noodles</a>
+                    </span>
 
-                    <span className="item3">
-                <img src={dessertsIcon} />
-                <a className="item3_link" href="#">Desserts</a>
-            </span>
+                    <span className="scrollmenu__item">
+                        <img src={steaksIcon} />
+                        <a className="scrollmenu__link" href="#">Steaks</a>
+                    </span>
 
-                    <span className="item3">
-                <img src={drinksIcon} />
-                <a className="item3_link" href="#">Drinks</a>
-            </span>
+                    <span className="scrollmenu__item">
+                        <img src={dessertsIcon} />
+                        <a className="scrollmenu__link" href="#">Desserts</a>
+                    </span>
+
+                    <span className="scrollmenu__item">
+                        <img src={drinksIcon} />
+                        <a className="scrollmenu__link" href="#">Drinks</a>
+                    </span>
                 </div>
 
-                <div className='shopping-bag'>
+                <div className='scrollmenu__shopping'>
                     <i className="fas fa-shopping-bag bag"></i>
                 </div>
             </div>

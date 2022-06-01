@@ -3,7 +3,10 @@ import Burgers from './burgerdark/burgers';
 import Pizza from './pizzadark/pizza';
 import Sushi from './sushidark/sushi';
 import Noodles from './noodlesdark/noodles';
-import './foodclickdark.css';
+import './foodclickdark.scss';
+import './react-slider.scss'
+import '../../../common/modal/dialog.scss'
+import '../../../common/divspani/clicksearch.scss'
 import './slick.css'
 
 
@@ -13,86 +16,68 @@ const Foodclickdark = () => {
 
     return (
         <>
-            <div className="foodclick">
-                <div className="foodclick1">
-                    <ul className="burger_list">
-                        <li className="list_product">
-                            <button
-                                className="btnburgers"
-                                onClick={() => {setSelectedTab('burgers'); setSelectedCategory('all')}}
-                            >
-                                Burgers
-                            </button>
-                        </li>
-                        <li className="list_product">
-                            <button
-                                className="btnburgers"
-                                onClick={() => {setSelectedTab('pizza'); setSelectedCategory('all')}}
-                            >
-                                Pizza
-                            </button>
-                        </li>
-                        <li className="list_product">
-                            <button
-                                className="btnburgers"
-                                onClick={() => {setSelectedTab('sushi'); setSelectedCategory('all')}}
-                            >
-                                Sushi
-                            </button>
-                        </li>
-                        <li className="list_product">
-                            <button
-                                className="btnburgers"
-                                onClick={() => {setSelectedTab('noodlesblack'); setSelectedCategory('all')}}
-                            >
-                                Noodles
-                            </button>
-                        </li>
-                    </ul>
+            <div className="foodTabs">
+                <div className="foodTabs__container">
+                    <div className="foodTabs__burger-list">
+                        <button
+                                className="foodTabs__tab"
+                                onClick={() => {setSelectedTab('burgers');
+                                setSelectedCategory('all')}}
+                        >
+                            Burgers
+                        </button>
+                        <button
+                            className="foodTabs__tab"
+                            onClick={() => {setSelectedTab('pizza'); setSelectedCategory('all')}}
+                        >
+                            Pizza
+                        </button>
+                        <button
+                            className="foodTabs__tab"
+                            onClick={() => {setSelectedTab('sushi'); setSelectedCategory('all')}}
+                        >
+                            Sushi
+                        </button>
+                        <button
+                            className="foodTabs__tab"
+                            onClick={() => {setSelectedTab('noodlesblack'); setSelectedCategory('all')}}
+                        >
+                            Noodles
+                        </button>
+                    </div>
 
-                    <div className="click_blog">
-                        <ul className="click_href">
-                            <li className="click_list">
+
+                    <div className="foodTabs__info">
                                 <button
-                                    className={`click_btn ${selectedCategory === 'all' ? 'active' : ''}`}
+                                    className={`foodTabs__btn ${selectedCategory === 'all' ? 'active' : ''}`}
                                     onClick={() => setSelectedCategory('all')}
                                 >
                                     All
                                 </button>
-                            </li>
-                            <li className="click_list">
                                 <button
-                                    className={`click_btn ${selectedCategory === 'spicy' ? 'active' : ''}`}
+                                    className={`foodTabs__btn ${selectedCategory === 'spicy' ? 'active' : ''}`}
                                     onClick={() => setSelectedCategory('spicy')}
                                 >
                                     Spicy
                                 </button>
-                            </li>
-                            <li className="click_list">
                                 <button
-                                    className={`click_btn ${selectedCategory === 'meat' ? 'active' : ''}`}
+                                    className={`foodTabs__btn ${selectedCategory === 'meat' ? 'active' : ''}`}
                                     onClick={() => setSelectedCategory('meat')}
                                 >
                                     Meat
                                 </button>
-                            </li>
-                            <li className="click_list">
                                 <button
-                                    className={`click_btn ${selectedCategory === 'fish' ? 'active' : ''}`}
+                                    className={`foodTabs__btn ${selectedCategory === 'fish' ? 'active' : ''}`}
                                     onClick={() => setSelectedCategory('fish')}
                                 >
                                     Fish
                                 </button>
-                            </li>
-                            <li className="click_list">
                                 <button
-                                    className={`click_btn ${selectedCategory === 'chicken' ? 'active' : ''}`}
+                                    className={`foodTabs__btn ${selectedCategory === 'chicken' ? 'active' : ''}`}
                                     onClick={() => setSelectedCategory('chicken')}
                                 >
                                     Chicken
                                 </button>
-                            </li>
-                        </ul>
                     </div>
 
 

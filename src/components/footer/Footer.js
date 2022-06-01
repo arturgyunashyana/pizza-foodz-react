@@ -4,60 +4,59 @@ import './Footer.scss';
 const Footer = () => {
   return (
     <div className='footer'>
-      <div className="section5parent">
-        <div className="section5parent-groups">
-          <div className="section5item">
+      <div className="footer__container">
+        <div className="footer__content">
+          <div className="footer__item">
             <img src='https://parkofideas.com/foodz/demo1/wp-content/uploads/2019/03/demo1-0616827188-1.svg' />
-            <div id="phonevolume">
+            <div className="footer__phonevolume">
               <i className="fas fa-phone-volume"></i>
               1-800-312-2121
             </div>
-            <div className="textinfo">
+            <div className="footer__text">
               <p>555 California str, Suite 100 San Francisco, CA 94107</p>
             </div>
-
           </div>
 
-          <div className="section5info">
-            <div className="section5text">
-              <h4>Our Menu</h4>
-              <ul>
-                <li><a href="#"> Pizza</a></li>
-                <li><a href="#">Burgers</a></li>
-                <li><a href="#">Sushi</a></li>
-                <li><a href="#">Steaks</a></li>
-                <li><a href="#">Drinks</a></li>
-              </ul>
+          <div className="footer__main">
+            <div className="footer__info">
+              <span className="footer__subtitle">
+                Our Menu
+              </span>
+                <a className="footer__link" href="#">Pizza</a>
+                <a className="footer__link" href="#">Burgers</a>
+                <a className="footer__link" href="#">Sushi</a>
+                <a className="footer__link" href="#">Steaks</a>
+                <a className="footer__link" href="#">Drinks</a>
             </div>
-            <div className="section5text">
-              <h4>Pages</h4>
-              <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Blog Post</a></li>
-                <li><a href="#">Wishlist</a></li>
-              </ul>
+            <div className="footer__info">
+              <span className="footer__subtitle">
+                Pages
+              </span>
+                  <a className="footer__link" href="#">About</a>
+                  <a className="footer__link" href="#">Contact</a>
+                  <a className="footer__link" href="#">Blog</a>
+                  <a className="footer__link" href="#">Blog Post</a>
+                  <a className="footer__link" href="#">Wishlist</a>
             </div>
-            <div className="section5text">
-              <h4>How can we help</h4>
-              <ul>
-                <li><a href="#">Terms and Conditions</a></li>
-                <li><a href="#">Privacy and Cookie policy</a></li>
-                <li><a href="#">FAQ</a></li>
-              </ul>
+            <div className="footer__info">
+              <span className="footer__subtitle">
+                How can we help
+              </span>
+                <a className="footer__link" href="#">Terms and Conditions</a>
+                <a className="footer__link" href="#">Privacy and Cookie policy</a>
+                <a className="footer__link" href="#">FAQ</a>
             </div>
           </div>
         </div>
 
 
 
-        <div className="section5footer">
-          <span>
+        <div className="footer__find">
+          <span className="footer__find-title">
             <p>© Copyright 2019 Foodz WordPress Theme</p>
           </span>
 
-          <span id="iconsweb">
+          <span className="footer__iconWeb">
             <i className="fab fa-facebook-f"></i>
             <i className="fab fa-instagram-square"></i>
             <i className="fab fa-twitter"></i>

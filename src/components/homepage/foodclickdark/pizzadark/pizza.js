@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Slider from "react-slick";
+import '../react-slider.scss'
 import PizzaRegina from "../../../../assets/images/tabsfoodsimages/pizzablack/pizzareginablack.jpg"
 import PizzaCalabria from "../../../../assets/images/tabsfoodsimages/pizzablack/pizzacalabriablack.jpg"
 import PizzaFunghi from "../../../../assets/images/tabsfoodsimages/pizzablack/pizzafunghiblack.jpg"
@@ -149,61 +150,77 @@ export default function Pizza({selectedCategory}) {
     return (
         <>
         <div className="slider">
-        <Slider {...settings}>
-         {filteredPizza.map(item => {
-             return(
-                <div className="itemblog">
-                <div className="itemblogimg">
-                    <img src={item.image} />
-                    <div className="clicksearch">
-                        <span className="iconsspan-dark" onClick={() => toggle(item)}>
-                            <i className="fas fa-search"></i>
-                        </span>
+            <div className="slider__container">
+                <Slider {...settings}>
+                    {filteredPizza.map(item => {
+                        return(
+                            <div className="slider__content">
+                                <div className="slider__image">
+                                    <img src={item.image} />
+                                    <div className="clickSearch">
+                                    <span
+                                        className="clickSearch__icon"
+                                        onClick={() => toggle(item)}
+                                    >
+                                        <i className="fas fa-search"></i>
+                                    </span>
 
-                        <span className="iconsspan-dark">
-                            <i className="fas fa-heart"></i>
-                        </span>
-                    </div>
-                </div>
-                <div className="iteminfo">
-                    <div className="iteminfoparent">
-                        <a href="#" className="iteminfo-title">{item.name}</a>
-                    </div>
-                    <div className="iteminfotext">
-                        <p id="lorem">Buffalo burgers have less cholesterol and less fat</p>
-                    </div>
-                    <div className="link_blog">
-                        <span className="link_href"></span>
-                        <span className="link_href1"></span>
-                    </div>
-                    <h3 id="leal">{item.price}</h3>
-                    <button type="button" id="btn2">
-                        <i className="cart fas fa-shopping-bag"></i>
-                        Add to Cart
-                    </button>
-                </div>
-           </div>
-             )
-         })}
-        </Slider>
+                                        <span className="clickSearch__icon">
+                                        <i className="fas fa-heart"></i>
+                                    </span>
+                                    </div>
+                                </div>
+                                <div className="slider__info">
+                                    <div className="slider__row">
+                                        <a href="#" className="slider__row-title">
+                                            {item.name}
+                                        </a>
+                                    </div>
+                                    <div className="slider__row-text">
+                                        <p className="slider__row-paragraph">
+                                            Buffalo burgers have less
+                                            cholesterol and less fat
+                                        </p>
+                                    </div>
+                                    <div className="slider__row-more">
+                                        <span className="slider__row-addFirst">
+
+                                        </span>
+                                        <span className="slider__row-addSecond">
+
+                                        </span>
+                                    </div>
+                                    <span className="slider__row-price">
+                                        {item.price}
+                                    </span>
+                                    <button type="button" className="slider__btn">
+                                        <i className="cart fas fa-shopping-bag"></i>
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        )
+                    })}
+                </Slider>
+            </div>
         </div>
         {modal && (
-            <div className="modal-burgers" onClick={() => setModal(false)}>
-                <div className="modal-container1">
+            <div className="dialog" onClick={() => setModal(false)}>
+                <div className="dialog__container">
                     <img
-                        className="burger-img"
+                        className="dialog__image"
                         src={selectedPizza.image}
                         alt={selectedPizza.name}
                     />
                 </div>
 
-                <div className="modalimg-icons">
-                <span className="modalimg-icons__search">
-                    <img src={SearchIcon} alt={SearchIcon} />
-                </span>
-                    <span className="modalimg-icons__close">
-                    <img src={CloseIcon} alt={CloseIcon} />
-                </span>
+                <div className="dialog__icons">
+                        <span className="dialog__icons-search">
+                            <img src={SearchIcon} alt={SearchIcon} />
+                        </span>
+                    <span className="dialog__icons-close">
+                            <img src={CloseIcon} alt={CloseIcon} />
+                        </span>
                 </div>
             </div>
 

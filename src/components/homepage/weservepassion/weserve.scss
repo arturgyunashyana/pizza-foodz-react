@@ -1,0 +1,96 @@
+.weServe {
+  width:100%;
+  background-color:#1D2130;
+  background-image: url('../../../assets/images/greyimg.jpg');
+  background-size: cover;
+  background-position: center;
+  &__container {
+    max-width:1140px;
+    margin: 0 auto;
+    display:flex;
+    justify-content: space-between;
+    column-gap: 50px;
+    padding: 105px 0;
+  }
+  &__contentFirst {
+    position: relative;
+    left:150px;
+    width: 386px;
+    height: 476px;
+    background-image: url("../../../assets/images/Men.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    &:before {
+      content: '';
+      background-image: url("../../../assets/images/terev.webp");
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 108px;
+      height: 108px;
+      position: absolute;
+      top: 8%;
+      left: -25%;
+    }
+  }
+  &__contentSecond {
+    width: 50%;
+    height:100%;
+  }
+  &__title {
+    color:#fff;
+    padding: 0 10px;
+    margin-bottom: 40px;
+    margin-left: 18px;
+  }
+  &__item {
+    position: absolute;
+    top: 40%;
+    right:65%;
+    animation: img-2 10s linear infinite;
+    @keyframes img-1{
+      0%{
+        top:350px;
+      }
+      25%{
+        top: 300px;
+      }
+      100%{
+        top: 350px;
+      }
+    }
+
+    @keyframes img-2{
+      0%{
+        top: 250px;
+      }
+      25%{
+        top: 200px;
+      }
+      100%{
+        top: 250px;
+      }
+    }
+  }
+  &__item-img {
+    position:absolute;
+    top: 60%;
+    right:75%;
+    z-index: 1;
+    animation: img-1 10s linear infinite;
+  }
+  &__fon-text {
+    position: absolute;
+    bottom: -25%;
+    right: 18%;
+  }
+}
+
+.more {
+  width: 50px;
+  padding: 10px 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+

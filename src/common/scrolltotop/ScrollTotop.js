@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import './scrolltotopwhite.css'
+import './scrolltotop.scss'
 
 export default function ScrollTotopred () {
 
@@ -25,7 +25,7 @@ export default function ScrollTotopred () {
     return(
         <>
             {showScroll ?
-                <button className="scroll-to-top-white" onClick={scrollTop}>
+                <button className="scrollToTop" onClick={scrollTop}>
                     <i id="arrow-black" className="fas fa-chevron-up"></i>
                 </button> : <></>
             }

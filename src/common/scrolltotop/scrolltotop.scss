@@ -1,4 +1,4 @@
-.scroll-to-top-white {
+.scrollToTop{
     width:50px;
     height:50px;
     border-radius: 10px;
@@ -9,9 +9,10 @@
     border: none;
     cursor: pointer;
     z-index: 1;
+    #arrow-black{
+        font-size: 20px;
+        color:#000;
+    }
 }
 
-#arrow-black{
-    font-size: 20px;
-    color:#000;
-}
+

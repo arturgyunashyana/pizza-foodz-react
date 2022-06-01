@@ -1,0 +1,82 @@
+.scrollmenu{
+    width: 100%;
+    background-color: #222635;
+    transform: translateY(-100%);
+    transition: all .5s;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index: 1;
+    &__container {
+        max-width:1000px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__nav {
+        display: flex;
+        align-items: center;
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        margin: 0 10px;
+        padding: 20px 0;
+        cursor: pointer;
+        transition:all 0.5s ease;
+        img {
+            width: 50px;
+        }
+    }
+    &__link {
+        margin-left: 10px;
+        color:#fff;
+        transition: 0.5s ease;
+        &:hover {
+            color: grey;
+        }
+    }
+    &__shopping {
+        position: relative;
+        padding-bottom: 35px;
+        padding-top: 35px;
+        i {
+            transition: 0.5s ease;
+            cursor: pointer;
+        }
+        .fa-shopping-bag {
+            color: #fff;
+            &:hover {
+                color: #ccc;
+                &:after {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+            &:after {
+                content: 'No products in the cart.';
+                width: 200px;
+                padding: 25px 20px;
+                background-color: #222635;
+                position: absolute;
+                bottom: -65%;
+                right: -80%;
+                opacity: 0;
+                visibility: hidden;
+                color: #fff;
+                text-align: center;
+                transition: 0.5s ease;
+                z-index: 1;
+            }
+        }
+    }
+
+    &.open{
+        transform: translateY(0);
+        z-index: 999;
+    }
+}
+
+

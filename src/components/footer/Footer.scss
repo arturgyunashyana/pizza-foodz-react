@@ -3,72 +3,66 @@
     height:400px;
     padding: 40px 0 30px 0;
     background-color: #1b212f;
-}
+    &__container {
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+    &__content {
+        display:flex;
+        justify-content: space-between;
+    }
+    &__item {
 
-.section5parent{
-    max-width: 1140px;
-    margin: 0 auto;
-}
-
-.section5parent-groups {
-    display:flex;
-    justify-content: space-between;
-}
-
-.section5info{
-    width:550px;
-    display:flex;
-    justify-content: space-between;
-}
-
-.section5text h4{
-    color:#D0CEC4;
-    padding:20px 0;
-}
-
-.section5text ul li a{
-    color:grey;
-    text-decoration: none;
-    line-height: 35px;
-}
-
-.section5text ul li{
-    list-style: none;
-}
-
-#phonevolume{
-    width:200px;
-    height:50px;
-    border:2px solid grey;
-    margin:20px 0;
-    text-align: center;
-    display:flex;
-    justify-content: space-evenly;
-    color:#989DA4;
-    align-items: center;
-    font-weight: 600;
-}
-
-.textinfo{
-    width:200px;
-    color:grey;
-}
-
-.section5footer{
-    width: 100%;
-    margin-top: 45px;
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.section5footer p{
-    color:grey;
-}
-
-#iconsweb{
-    width:100px;
-    display: flex;
-    justify-content: space-between;
-    color:grey;
+    }
+    &__phonevolume {
+        width:200px;
+        height:50px;
+        border:2px solid grey;
+        margin:20px 0;
+        text-align: center;
+        display:flex;
+        justify-content: space-evenly;
+        color:#989DA4;
+        align-items: center;
+        font-weight: 600;
+    }
+    &__text {
+        width:200px;
+        color:grey;
+    }
+    &__main {
+        width:550px;
+        display:flex;
+        justify-content: space-between;
+    }
+    &__subtitle {
+        color:#D0CEC4;
+        padding:20px 0;
+        display: inline-block;
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+    }
+    &__link {
+        color:grey;
+        text-decoration: none;
+        line-height: 35px;
+    }
+    &__find {
+        width: 100%;
+        margin-top: 45px;
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__find-title {
+        color:grey;
+    }
+    &__iconWeb {
+        width:100px;
+        display: flex;
+        justify-content: space-between;
+        color:grey;
+    }
 }

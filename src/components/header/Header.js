@@ -10,67 +10,71 @@ import dessertsIcon from '../../assets/images/desserts-icon.svg';
 import drinksIcon from '../../assets/images/drinks-icon.svg';
 import SearchDialog from './SearchDialog';
 import ScrollMenuDark from "../../common/scrollMenudark/ScrollMenudark";
-import ScrollTotopWhite from "../../common/scrolltotopwhite/ScrollTotopWhite";
+import ScrollTotopWhite from "../../common/scrolltotop/ScrollTotop";
 
 const Header = () => {
     const [showSearchDialog, setShowSearchDialog] = useState(false);
 
     return (
         <>
-            <div className="menuwhite">
-                <div className="headermenuWhite">
-                    <div className="headermenunav">
+            <div className="header">
+                <div className="header__container">
+                    <div className="header__icons">
                         <i className="fab fa-facebook-f"></i>
                         <i className="fab fa-instagram-square"></i>
                         <i className="fab fa-twitter"></i>
                     </div>
 
-                    <div className="headerimg">
+                    <div className="header__fon">
                         <img src={siteLogo} alt="logo" />
                     </div>
 
-                    <div className="headermenunav">
-                        <i className="fas fa-search" onClick={() => setShowSearchDialog(true)}></i>
-                        <i className="fas fa-heart"></i>
-                        <i className="fas fa-shopping-bag bag-dark"></i>
+                    <div className="header__icons">
+                        <i className="fas fa-search"
+                           onClick={() => setShowSearchDialog(true)}>
+                        </i>
+                        <i className="fas fa-heart">
+                        </i>
+                        <i className="fas fa-shopping-bag bag-dark">
+                        </i>
                     </div>
                 </div>
             </div>
-            <div className="blog1">
-                <div className="blog1item">
-                    <span className="item2">
+            <div className="header__menu">
+                <div className="header__container-menu">
+                    <span className="header__nav">
                         <img src={pizzaIcon} />
-                        <a className="item2_link" href="#">Pizza</a>
+                        <a className="header__nav-link" href="#">Pizza</a>
                     </span>
 
-                    <span className="item2">
+                    <span className="header__nav">
                         <img src={burgersIcon} />
-                        <a className="item2_link" href="#">Burgers</a>
+                        <a className="header__nav-link" href="#">Burgers</a>
                     </span>
 
-                    <span className="item2">
+                    <span className="header__nav">
                         <img src={sushiIcon} />
-                        <a className="item2_link" href="#">Sushi</a>
+                        <a className="header__nav-link" href="#">Sushi</a>
                     </span>
 
-                    <span className="item2">
+                    <span className="header__nav">
                         <img src={noodlesIcon} />
-                        <a className="item2_link" href="#">Noodles</a>
+                        <a className="header__nav-link" href="#">Noodles</a>
                     </span>
 
-                    <span className="item2">
+                    <span className="header__nav">
                         <img src={steaksIcon} />
-                        <a className="item2_link" href="#">Steaks</a>
+                        <a className="header__nav-link" href="#">Steaks</a>
                     </span>
 
-                    <span className="item2">
+                    <span className="header__nav">
                         <img src={dessertsIcon} />
-                        <a className="item2_link" href="#">Desserts</a>
+                        <a className="header__nav-link" href="#">Desserts</a>
                     </span>
 
-                    <span className="item2">
+                    <span className="header__nav">
                         <img src={drinksIcon} />
-                        <a className="item2_link" href="#">Drinks</a>
+                        <a className="header__nav-link" href="#">Drinks</a>
                     </span>
                 </div>
             </div>

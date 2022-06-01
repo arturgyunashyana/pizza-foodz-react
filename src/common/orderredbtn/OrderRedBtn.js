@@ -1,8 +1,10 @@
-import './orderredbtn.css'
+import './orderredbtn.scss'
 
 export default function OrderRedBtn () {
 
     return (
-        <button type="button" className="btn1">ORDER NOW</button>
+        <button type="button" className="orderBtn">
+            ORDER NOW
+        </button>
     )
 }

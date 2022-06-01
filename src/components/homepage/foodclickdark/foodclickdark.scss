@@ -1,0 +1,45 @@
+.foodTabs{
+    width:100%;
+    padding-top:100px;
+  &__container {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+  &__burger-list {
+    text-align: center;
+  }
+  &__tab {
+    text-decoration: none;
+    color: #636770;
+    font-weight: 600;
+    font-size: 35px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding:20px 20px 0;
+    &:hover {
+      color:rgb(122, 120, 120);
+    }
+  }
+  &__info {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__btn {
+    background: transparent;
+    color:#fff;
+    border:1px solid grey;
+    font-size: 15px;
+    padding:5px 10px;
+    margin:0 10px;
+    cursor: pointer;
+    border-radius:5px;
+    display: inline-block;
+    &.active {
+      background: #fff;
+      color: #000;
+    }
+  }
+}
