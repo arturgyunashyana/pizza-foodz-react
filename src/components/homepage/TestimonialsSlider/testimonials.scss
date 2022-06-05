@@ -2,6 +2,9 @@
     width: 100%;
     padding: 55px 0;
     background-color: #1c2230;
+    @media (max-width: 760px) {
+        padding: 55px 20px;
+    }
     &__container {
         max-width: 1140px;
         margin: 0 auto;
@@ -18,12 +21,19 @@
     }
     &__slider-content {
         max-width: 680px;
+        display: flex;
+        flex-direction: column;
     }
     &__slider-paragraph {
         font-size: 22px;
         line-height: 37px;
         color: #D0D4DA;
         margin-bottom: 20px;
+        @media (max-width: 760px) {
+            font-size: 12px;
+            line-height: 20px;
+            margin-bottom: 10px;
+        }
     }
     &__slider-image {
         width: 55px;

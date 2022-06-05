@@ -18,8 +18,8 @@ export default function Blogscale () {
                   </div>
               </div>
               <div className="blogScale__contentSecond">
-                  <img src={Japanesesushi} className="blogScale__image" />
-                  <div className="blogScale__item">
+                  <img src={Japanesesushi} className="blogScale__imageSecond" />
+                  <div className="blogScale__itemSecond">
                       <div className="subtitle">TRADITIONAL</div>
                       <div className="burgers-title">JAPANESE SUSHI</div>
                       <a href="#" className="readMore">READ MORE</a>

@@ -17,6 +17,9 @@
     border: none;
     cursor: pointer;
     padding:20px 20px 0;
+    @media (max-width: 760px) {
+      font-size: 10px;
+    }
     &:hover {
       color:rgb(122, 120, 120);
     }
@@ -26,6 +29,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 760px) {
+
+    }
   }
   &__btn {
     background: transparent;
@@ -37,6 +43,10 @@
     cursor: pointer;
     border-radius:5px;
     display: inline-block;
+    @media (max-width: 760px) {
+      font-size: 10px;
+      padding:5px 5px;
+    }
     &.active {
       background: #fff;
       color: #000;

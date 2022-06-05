@@ -1,18 +1,18 @@
 .slider {
   width: 100%;
-  margin: 100px auto;
   padding:20px 0;
-  &__container {
-    max-width: 1140px;
-    margin: 0 auto;
-  }
+  margin-top: 100px;
   &__content {
-    max-width: 250px;
-    margin-left: 18px;
+    max-width: 264px;
     border: 1px solid transparent;
     transition:all 0.3s ease;
-    padding:20px 10px;
+    padding: 13px 0 23px 0;
+    margin-right: 20px;
     box-sizing: border-box;
+    @media (max-width: 760px) {
+      width: 100%;
+      overflow: hidden;
+    }
     &:hover {
       border:1px solid #6d6b6b;
       .slider__btn {
@@ -31,17 +31,21 @@
   &__image {
     width: 100%;
     height: 200px;
+    margin-bottom: 20px;
     img {
       width: 100%;
+      height: 100%;
     }
   }
   &__info {
-    width: 100%;
-    padding: 0 20px;
+    padding: 13px;
+  }
+  &__info-img {
+    margin-bottom: 5px;
   }
   &__row {
     display: inline-block;
-    margin-top: 40px;
+    margin: 40px 0 10px 0;
   }
   &__row-title {
     color:#fff;
@@ -65,6 +69,8 @@
     border:none;
     font-size: 13px;
     display: inline-block;
+    color: #fff;
+    cursor: pointer;
   }
   &__row-addSecond {
     border:1px solid #414755;
@@ -75,6 +81,7 @@
     font-size: 13px;
     margin-left: 10px;
     display: inline-block;
+    cursor: pointer;
   }
   &__row-price {
     padding-top: 18px;
@@ -85,10 +92,10 @@
     margin-bottom: 20px;
   }
   &__btn {
-    width: 200px;
+    width: 100%;
     height: 40px;
-    background-color: #6fba54;
     margin: 0 auto;
+    background-color: #6fba54;
     border: none;
     opacity: 0;
     visibility: hidden;
@@ -97,6 +104,11 @@
     transition:all 0.3s ease;
     i {
       margin-right: 10px;
+    }
+  }
+  &__row-more-tasks {
+    &:nth-child(1n) {
+      margin-bottom: 10px;
     }
   }
 }

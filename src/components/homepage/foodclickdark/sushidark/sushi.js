@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Slider from "react-slick"
+import Carousel from "react-elastic-carousel";
 import '../react-slider.scss'
-import ClickSearch from "../../../../common/divspani/ClickSearch";
 import SpiderRoll from "../../../../assets/images/tabsfoodsimages/sushiblack/sushispiderrollblack.jpg"
 import DragonRoll from "../../../../assets/images/tabsfoodsimages/sushiblack/sushidragonrollblack.jpg"
 import ShrimpTempuraRoll from "../../../../assets/images/tabsfoodsimages/sushiblack/sushishrimptempuraroll.webp"
@@ -12,31 +11,6 @@ import VegetableRoll from '../../../../assets/images/tabsfoodsimages/sushiblack/
 import SearchIcon from "../../../../assets/images/search.svg";
 import CloseIcon from "../../../../assets/images/close-icon.svg";
 
-
-function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <div
-            className={className}
-            style={{ ...style,background: "#000",display:'block',borderRadius:'50%' }}
-            onClick={onClick}
-        />
-    );
-}
-
-function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <div
-            className={className}
-            style={{ ...style,display:'block',backgroundColor:'#000',borderRadius:'50%'}}
-            onClick={onClick}
-        />
-    );
-}
-
-
-
 export default function Sushi({selectedCategory}) {
 
     const [modal, setModal] = useState(false);
@@ -46,7 +20,7 @@ export default function Sushi({selectedCategory}) {
             id: 1,
             image: SpiderRoll,
             name: 'Spider Roll',
-            description: 'A hamburger made using beef from Angus cattle.',
+            description: 'Soft-shell crab tempura, cucumber, avocado, spicy mayo',
             price: '$22.99',
             category: 'chicken',
           },
@@ -54,7 +28,7 @@ export default function Sushi({selectedCategory}) {
             id: 2,
             image: DragonRoll,
             name: 'Dragon Roll',
-            description: 'Popular regional hamburger ingredients in Australia',
+            description: 'Eel, crab, cucumber / avocado outside, eel sauce',
             price: '$17.99',
               category: 'spicy',
           },
@@ -62,7 +36,7 @@ export default function Sushi({selectedCategory}) {
             id: 3,
             image: ShrimpTempuraRoll,
             name: 'Tempura Roll',
-            description: 'dfjhfghfghfgh',
+            description: 'Shrimp tempura, avocado, tempura flakes, eel sauce',
             price: '$24.99',
               category: 'spicy',
           },
@@ -70,7 +44,7 @@ export default function Sushi({selectedCategory}) {
             id: 4,
             image: SpicyTunaRoll,
             name: 'Spicy Tuna Roll',
-            description: 'sdfgdhfgjh fghdfd',
+            description: 'Tuna, mayo, chili sauce, avocado, carrot',
             price: '$18.99',
               category: 'chicken',
           },
@@ -78,7 +52,7 @@ export default function Sushi({selectedCategory}) {
             id: 5,
             image: CaterpillarRoll,
             name: 'Caterpillar Roll',
-            description: 'dfgdffbjfh',
+            description: 'Eel, cucumber, avocado, fresh carrot, scallion',
             price: '$14.99',
               category: 'spicy',
           },
@@ -86,7 +60,7 @@ export default function Sushi({selectedCategory}) {
             id: 6,
             image: CrunchRoll,
             name: 'Crunch Roll',
-            description: 'fgdg dfgdfg',
+            description: 'Spicy tuna, crispy seaweed, tempura',
             price: '$14.99',
               category: 'meat',
           },
@@ -94,7 +68,7 @@ export default function Sushi({selectedCategory}) {
             id: 7,
             image: VegetableRoll,
             name: 'Vegetable Roll',
-            description: 'fgdg dfgdfg',
+            description: 'Cucumber, fresh carrot, scallion, avocado',
             price: '$18.99',
               category: 'fish',
           },
@@ -110,31 +84,29 @@ export default function Sushi({selectedCategory}) {
         }
     }, [selectedCategory])
 
-    const settings = {
-        infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />
-    };
-
     const toggle = (item) => {
         setModal(!modal)
         setSelectedSushi(item)
-        }
+    }
 
-
+    const breakPoints = [
+        { width: 1, itemsToShow: 1 },
+        { width: 550, itemsToShow: 2 },
+        { width: 768, itemsToShow: 4 },
+        { width: 1200, itemsToShow: 4 },
+    ];
 
     return (
         <>
         <div className="slider">
-            <Slider {...settings}>
+            <Carousel breakPoints={breakPoints}>
                 {filteredSushi.map(item => {
                     return (
                         <div className="slider__content">
-                            <div className="slider__image">
-                                <img src={item.image} />
-                                <div className="clickSearch">
+                            <div className="slider__info">
+                                <div className="slider__image">
+                                    <img src={item.image} />
+                                    <div className="clickSearch">
                                     <span
                                         className="clickSearch__icon"
                                         onClick={() => toggle(item)}
@@ -142,12 +114,12 @@ export default function Sushi({selectedCategory}) {
                                         <i className="fas fa-search"></i>
                                     </span>
 
-                                    <span className="clickSearch__icon">
+                                        <span className="clickSearch__icon">
                                         <i className="fas fa-heart"></i>
                                     </span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="slider__info">
+
                                 <div className="slider__row">
                                     <a href="#" className="slider__row-title">
                                         {item.name}
@@ -155,31 +127,35 @@ export default function Sushi({selectedCategory}) {
                                 </div>
                                 <div className="slider__row-text">
                                     <p className="slider__row-paragraph">
-                                        Buffalo burgers have less
-                                        cholesterol and less fat
+                                        {item.description}
                                     </p>
                                 </div>
                                 <div className="slider__row-more">
-                                            <span className="slider__row-addFirst">
 
-                                            </span>
+                                    <span className="slider__row-addFirst">
 
-                                            <span className="slider__row-addSecond">
+                                    </span>
 
-                                            </span>
+                                    <span className="slider__row-addSecond">
+
+                                    </span>
                                 </div>
-                                        <span className="slider__row-price">
-                                            {item.price}
-                                        </span>
-                                <button type="button" className="slider__btn">
-                                    <i className="cart fas fa-shopping-bag"></i>
-                                    Add to Cart
-                                </button>
+
+                                <span className="slider__row-price">
+                                    {item.price}
+                                </span>
+
+                                <div className="slider__submit">
+                                    <button type="button" className="slider__btn">
+                                        <i className="cart fas fa-shopping-bag"></i>
+                                        Add to Cart
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     )
                 })}
-            </Slider>
+            </Carousel>
         </div>
 
         {modal && (
@@ -201,7 +177,6 @@ export default function Sushi({selectedCategory}) {
                         </span>
                 </div>
             </div>
-
          )}
         </>
     )

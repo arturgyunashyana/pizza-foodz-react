@@ -27,41 +27,40 @@ export default function ScrollMenuDark () {
         <div className={`scrollmenu ${showScroll ? "open" : ""} `}>
             <div className='scrollmenu__container'>
                 <div className="scrollmenu__nav">
-
-                    <span className="scrollmenu__item">
+                    <div className="scrollmenu__item">
                         <img src={pizzaIcon } />
                         <a className="scrollmenu__link" href="#">Pizza</a>
-                    </span>
+                    </div>
 
-                    <span className="scrollmenu__item">
+                    <div className="scrollmenu__item">
                         <img src={burgersIcon} />
                         <a className='scrollmenu__link' href="#">Burgers</a>
-                    </span>
+                    </div>
 
-                    <span className="scrollmenu__item">
+                    <div className="scrollmenu__item">
                         <img src={sushiIcon} />
                         <a className="scrollmenu__link" href="#">Sushi</a>
-                    </span>
+                    </div>
 
-                    <span className="scrollmenu__item">
+                    <div className="scrollmenu__item">
                         <img src={noodlesIcon} />
                         <a className="scrollmenu__link" href="#">Noodles</a>
-                    </span>
+                    </div>
 
-                    <span className="scrollmenu__item">
+                    <div className="scrollmenu__item">
                         <img src={steaksIcon} />
                         <a className="scrollmenu__link" href="#">Steaks</a>
-                    </span>
+                    </div>
 
-                    <span className="scrollmenu__item">
+                    <div className="scrollmenu__item">
                         <img src={dessertsIcon} />
                         <a className="scrollmenu__link" href="#">Desserts</a>
-                    </span>
+                    </div>
 
-                    <span className="scrollmenu__item">
+                    <div className="scrollmenu__item">
                         <img src={drinksIcon} />
                         <a className="scrollmenu__link" href="#">Drinks</a>
-                    </span>
+                    </div>
                 </div>
 
                 <div className='scrollmenu__shopping'>

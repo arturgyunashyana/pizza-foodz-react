@@ -10,23 +10,36 @@
         max-width:1140px;
         margin: 0 auto;
         padding: 55px 0;
+        @media (max-width: 760px) {
+            padding: 55px 20px;
+        }
     }
     &__info {
         position: relative;
         padding-top:50px;
         color:#fff;
         margin-bottom: 50px;
+        @media (max-width: 760px) {
+            margin-bottom: 10px;
+        }
     }
     &__title {
         text-align: center;
         font-size: 31px;
         font-family:'Roboto Condensed', sans-serif;
+        @media (max-width: 760px) {
+            font-size: 20px;
+        }
     }
     &__row {
         max-width: 900px;
         margin: 0 auto;
         display: flex;
         gap: 2em;
+        @media (max-width: 760px) {
+            width: 100%;
+            flex-direction: column;
+        }
     }
     &__row-content {
         flex: 0 1 50%;

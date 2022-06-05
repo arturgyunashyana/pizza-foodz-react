@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Slider from "react-slick"
+import Carousel from "react-elastic-carousel";
 import '../react-slider.scss'
 import Singapore from "../../../../assets/images/tabsfoodsimages/noodlesblack/singaporenoodlesblack.jpg"
 import Shanghai from "../../../../assets/images/tabsfoodsimages/noodlesblack/shanghainoodles.jpg"
@@ -8,30 +8,6 @@ import Chicken from "../../../../assets/images/tabsfoodsimages/noodlesblack/chic
 import Sichuan from "../../../../assets/images/tabsfoodsimages/noodlesblack/sichuannoodlesblack.jpg"
 import SearchIcon from "../../../../assets/images/search.svg";
 import CloseIcon from "../../../../assets/images/close-icon.svg";
-
-function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <div
-            className={className}
-            style={{ ...style,background: "#000",display:'block',borderRadius:'50%' }}
-            onClick={onClick}
-        />
-    );
-}
-
-function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <div
-            className={className}
-            style={{ ...style,display:'block',backgroundColor:'#000',borderRadius:'50%'}}
-            onClick={onClick}
-        />
-    );
-}
-
-
 
 export default function Noodles({selectedCategory}) {
 
@@ -42,7 +18,7 @@ export default function Noodles({selectedCategory}) {
             id: 1,
             image: Singapore,
             name: 'Singapore Noodles',
-            description: 'A hamburger made using beef from Angus cattle.',
+            description: 'Combines chicken, shrimp, and a spicy sauce',
             price: '$22.99',
             category: 'spicy',
         },
@@ -50,7 +26,7 @@ export default function Noodles({selectedCategory}) {
             id: 2,
             image: Shanghai,
             name: 'Shanghai Noodles',
-            description: 'Popular regional hamburger ingredients in Australia',
+            description: 'Beef meat, celery, red bell pepper, oyster sauce',
             price: '$17.99',
               category: 'chicken',
           },
@@ -58,7 +34,7 @@ export default function Noodles({selectedCategory}) {
             id: 3,
             image: Japanese,
             name: 'Japanese noodles',
-            description: 'dfjhfghfghfgh',
+            description: 'Japanese udon noodles with salmon fish',
             price: '$24.99',
               category: 'chicken',
           },
@@ -66,7 +42,7 @@ export default function Noodles({selectedCategory}) {
             id: 4,
             image: Chicken,
             name: 'Chicken Noodles',
-            description: 'sdfgdhfgjh fghdfd',
+            description: 'Chicken, bok choy, celery, red bell pepper, oyster sauce',
             price: '$18.99',
               category: 'spicy',
           },
@@ -74,7 +50,7 @@ export default function Noodles({selectedCategory}) {
             id: 5,
             image: Sichuan,
             name: 'Sichuan Noodles',
-            description: 'dfgdffbjfh',
+            description: 'Combines chicken, mushrooms, and a spicy sauce',
             price: '$14.99',
               category: 'fish',
           },
@@ -90,29 +66,30 @@ export default function Noodles({selectedCategory}) {
         }
     }, [selectedCategory])
 
-    const settings = {
-        infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />
-    };
-
     const toggle = (item) => {
         setModal(!modal)
         setSelectedNoodles(item)
-        }
+    }
+
+    const breakPoints = [
+        { width: 1, itemsToShow: 1 },
+        { width: 550, itemsToShow: 2 },
+        { width: 768, itemsToShow: 4 },
+        { width: 1200, itemsToShow: 4 },
+    ];
 
     return (
         <>
         <div className="slider">
-            <Slider {...settings}>
+            <Carousel breakPoints={breakPoints}>
                 {filteredNoodles.map(item => {
                     return (
                         <div className="slider__content">
-                            <div className="slider__image">
-                                <img src={item.image} />
-                                <div className="clickSearch">
+
+                            <div className="slider__info">
+                                <div className="slider__image">
+                                    <img src={item.image} />
+                                    <div className="clickSearch">
                                     <span
                                         className="clickSearch__icon"
                                         onClick={() => toggle(item)}
@@ -120,12 +97,11 @@ export default function Noodles({selectedCategory}) {
                                         <i className="fas fa-search"></i>
                                     </span>
 
-                                    <span className="clickSearch__icon">
+                                        <span className="clickSearch__icon">
                                         <i className="fas fa-heart"></i>
                                     </span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="slider__info">
                                 <div className="slider__row">
                                     <a href="#" className="slider__row-title">
                                         {item.name}
@@ -133,8 +109,7 @@ export default function Noodles({selectedCategory}) {
                                 </div>
                                 <div className="slider__row-text">
                                     <p className="slider__row-paragraph">
-                                        Buffalo burgers have less
-                                        cholesterol and less fat
+                                        {item.description}
                                     </p>
                                 </div>
                                 <div className="slider__row-more">
@@ -147,19 +122,19 @@ export default function Noodles({selectedCategory}) {
                                 </div>
                                 <span className="slider__row-price">
                                             {item.price}
-                                        </span>
-                                <button type="button" className="slider__btn">
-                                    <i className="cart fas fa-shopping-bag"></i>
-                                    Add to Cart
-                                </button>
+                                </span>
+                                <div className='slider__submit'>
+                                    <button type="button" className="slider__btn">
+                                        <i className="cart fas fa-shopping-bag"></i>
+                                        Add to Cart
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     )
                 })}
-            </Slider>
+            </Carousel>
         </div>
-
-
         {modal && (
             <div className="dialog" onClick={() => setModal(false)}>
                 <div className="dialog__container">
@@ -179,7 +154,6 @@ export default function Noodles({selectedCategory}) {
                         </span>
                 </div>
             </div>
-
          )}
         </>
     )

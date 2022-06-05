@@ -28,6 +28,7 @@ function HomePageSlider() {
 
 
     return (
+
         <div className="animate-slider">
             {dataSlider.map((obj, id) => {
                 return (

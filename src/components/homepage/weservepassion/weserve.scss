@@ -11,6 +11,11 @@
     justify-content: space-between;
     column-gap: 50px;
     padding: 105px 0;
+    @media (max-width: 1050px) {
+      flex-direction: column;
+      row-gap: 280px;
+      align-items: center;
+    }
   }
   &__contentFirst {
     position: relative;
@@ -20,6 +25,13 @@
     background-image: url("../../../assets/images/Men.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    display: inline-block;
+    color: #fff;
+    @media (max-width: 760px) {
+      width: 216px;
+      height: 266px;
+      left: 40px;
+    }
     &:before {
       content: '';
       background-image: url("../../../assets/images/terev.webp");
@@ -30,23 +42,43 @@
       position: absolute;
       top: 8%;
       left: -25%;
+      z-index: auto;
+      @media (max-width: 760px) {
+        width: 55px;
+        height: 55px;
+      }
     }
   }
   &__contentSecond {
     width: 50%;
     height:100%;
+    display: inline-block;
+    @media (max-width: 760px) {
+      width: 100%;
+    }
   }
   &__title {
     color:#fff;
     padding: 0 10px;
     margin-bottom: 40px;
     margin-left: 18px;
+    @media (max-width: 760px) {
+      font-size: 28px;
+      text-align: center;
+    }
   }
   &__item {
     position: absolute;
     top: 40%;
     right:65%;
+    width: 235px;
+    height: 359px;
     animation: img-2 10s linear infinite;
+    @media (max-width: 760px) {
+      width: 131px;
+      height: 200px;
+    }
+
     @keyframes img-1{
       0%{
         top:350px;
@@ -59,7 +91,7 @@
       }
     }
 
-    @keyframes img-2{
+    @keyframes img-2 {
       0%{
         top: 250px;
       }
@@ -71,17 +103,42 @@
       }
     }
   }
+
+  &__item-fon {
+    @media (max-width: 760px) {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
   &__item-img {
     position:absolute;
     top: 60%;
     right:75%;
     z-index: 1;
+    width: 248px;
+    height: 306px;
     animation: img-1 10s linear infinite;
+    @media (max-width: 760px) {
+      width: 139px;
+      height: 171px;
+      .item-img-rak {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
   &__fon-text {
     position: absolute;
     bottom: -25%;
     right: 18%;
+    @media (max-width: 760px) {
+      right: 20px;
+      .textFon {
+        width: 80px;
+      }
+    }
   }
 }
 

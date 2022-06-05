@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Slider from "react-slick";
+import Carousel from "react-elastic-carousel";
 import '../react-slider.scss'
 import PizzaRegina from "../../../../assets/images/tabsfoodsimages/pizzablack/pizzareginablack.jpg"
 import PizzaCalabria from "../../../../assets/images/tabsfoodsimages/pizzablack/pizzacalabriablack.jpg"
@@ -14,29 +14,6 @@ import PizzaMilano from '../../../../assets/images/tabsfoodsimages/pizzablack/Pi
 import SearchIcon from "../../../../assets/images/search.svg";
 import CloseIcon from "../../../../assets/images/close-icon.svg";
 
-
-function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <div
-            className={className}
-            style={{ ...style,background: "#000",display:'block',borderRadius:'50%' }}
-            onClick={onClick}
-        />
-    );
-}
-
-function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <div
-            className={className}
-            style={{ ...style,display:'block',backgroundColor:'#000',borderRadius:'50%'}}
-            onClick={onClick}
-        />
-    );
-}
-
 export default function Pizza({selectedCategory}) {
 
     const [modal, setModal] = useState(false);
@@ -46,7 +23,7 @@ export default function Pizza({selectedCategory}) {
               id: 1,
               image:PizzaBlanca,
               name: 'Pizza Blanca',
-              description: 'A hamburger made using beef from Angus cattle.',
+              description: 'Garlic Flatbread with Mozzarella · Parmesan · Garlic · Rosemary',
               price: '$13.99',
               category: 'chicken',
           },
@@ -54,7 +31,7 @@ export default function Pizza({selectedCategory}) {
               id: 2,
               image:PizzaCalabria,
               name: 'Pizza Calabria',
-              description: 'Popular regional hamburger ingredients in Australia',
+              description: 'Tomato Sauce · Mozzarella · Mascarpone · Nduja Spicy Sausage · Rocket',
               price: '$13.99',
               category: 'spicy',
           },
@@ -62,7 +39,7 @@ export default function Pizza({selectedCategory}) {
               id: 3,
               image:PizzaFunghi,
               name: 'Pizza Funghi',
-              description: 'dfjhfghfghfgh',
+              description: 'Tomato Sauce · Mozzarella · Mushrooms · Thyme',
               price: '$13.99',
               category: 'spicy',
           },
@@ -70,7 +47,7 @@ export default function Pizza({selectedCategory}) {
               id: 4,
               image: PizzaFormaggi,
               name: 'Pizza Formaggi',
-              description: 'sdfgdhfgjh fghdfd',
+              description: 'Tomato Sauce · Mozzarella · Parmesan · Mascarpone · Gorgonzola',
               price: '$13.99',
               category: 'chicken',
           },
@@ -78,7 +55,7 @@ export default function Pizza({selectedCategory}) {
               id: 5,
               image: PizzaVesuvio,
               name: 'Pizza Vesuvio',
-              description: 'dfgdffbjfh',
+              description: 'Tomato Sauce · Mozzarella · Pepperoni · Mixed Peppers · Green Chillies · Cracked Chillies',
               price: '$13.99',
               category: 'spicy',
           },
@@ -86,7 +63,7 @@ export default function Pizza({selectedCategory}) {
               id: 6,
               image: PizzaMargherita,
               name: 'Pizza Margherita',
-              description: 'fgdg dfgdfg',
+              description: 'Tomato Sauce · Mozzarella · Basil',
               price: '$13.99',
               category: 'meat',
           },
@@ -94,7 +71,7 @@ export default function Pizza({selectedCategory}) {
               id: 7,
               image: PizzaPepperoni,
               name: 'Pizza Pepperoni',
-              description: 'fgdg dfgdfg',
+              description: 'Tomato Sauce · Mozzarella · Double Pepperoni',
               price: '$13.99',
               category: 'spicy',
           },
@@ -102,7 +79,7 @@ export default function Pizza({selectedCategory}) {
               id: 8,
               image: PizzaRegina,
               name: 'Pizza Regina',
-              description: 'fgdg dfgdfg',
+              description: 'Tomato Sauce · Mozzarella · Parmesan · Ham · Mushrooms · Black Olives',
               price: '$13.99',
               category: 'meat',
         },
@@ -110,7 +87,7 @@ export default function Pizza({selectedCategory}) {
               id: 9,
               image: PizzaCarne,
               name: 'Pizza Carne',
-              description: 'fgdg dfgdfg',
+              description: 'Tomato Sauce · Mozzarella · Chicken · Beef · Pepperoni · Onions · Rosemary',
               price: '$13.99',
               category: 'fish',
         },
@@ -118,7 +95,7 @@ export default function Pizza({selectedCategory}) {
               id: 10,
               image: PizzaMilano,
               name: 'Pizza Milano',
-              description: 'fgdg dfgdfg',
+              description: 'Tomato Sauce · Mozzarella · Mascarpone · Nduja Spicy Sausage · Rocket',
               price: '$13.99',
               category: 'fish',
         },
@@ -134,30 +111,30 @@ export default function Pizza({selectedCategory}) {
         }
     }, [selectedCategory])
 
-    const settings = {
-        infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />
-    };
-
     const toggle = (item) => {
         setModal(!modal)
         setSelectedPizza(item)
         }
 
+    const breakPoints = [
+        { width: 1, itemsToShow: 1 },
+        { width: 550, itemsToShow: 2 },
+        { width: 768, itemsToShow: 4 },
+        { width: 1200, itemsToShow: 4 },
+    ];
+
     return (
         <>
         <div className="slider">
             <div className="slider__container">
-                <Slider {...settings}>
+                <Carousel breakPoints={breakPoints}>
                     {filteredPizza.map(item => {
                         return(
                             <div className="slider__content">
-                                <div className="slider__image">
-                                    <img src={item.image} />
-                                    <div className="clickSearch">
+                                <div className="slider__info">
+                                    <div className="slider__image">
+                                        <img src={item.image} />
+                                        <div className="clickSearch">
                                     <span
                                         className="clickSearch__icon"
                                         onClick={() => toggle(item)}
@@ -165,12 +142,12 @@ export default function Pizza({selectedCategory}) {
                                         <i className="fas fa-search"></i>
                                     </span>
 
-                                        <span className="clickSearch__icon">
+                                            <span className="clickSearch__icon">
                                         <i className="fas fa-heart"></i>
                                     </span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="slider__info">
+
                                     <div className="slider__row">
                                         <a href="#" className="slider__row-title">
                                             {item.name}
@@ -178,8 +155,7 @@ export default function Pizza({selectedCategory}) {
                                     </div>
                                     <div className="slider__row-text">
                                         <p className="slider__row-paragraph">
-                                            Buffalo burgers have less
-                                            cholesterol and less fat
+                                            {item.description}
                                         </p>
                                     </div>
                                     <div className="slider__row-more">
@@ -193,15 +169,17 @@ export default function Pizza({selectedCategory}) {
                                     <span className="slider__row-price">
                                         {item.price}
                                     </span>
-                                    <button type="button" className="slider__btn">
-                                        <i className="cart fas fa-shopping-bag"></i>
-                                        Add to Cart
-                                    </button>
+                                    <div className="slider__submit">
+                                        <button type="button" className="slider__btn">
+                                            <i className="cart fas fa-shopping-bag"></i>
+                                            Add to Cart
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         )
                     })}
-                </Slider>
+                </Carousel>
             </div>
         </div>
         {modal && (
@@ -223,7 +201,6 @@ export default function Pizza({selectedCategory}) {
                         </span>
                 </div>
             </div>
-
          )}
         </>
     )

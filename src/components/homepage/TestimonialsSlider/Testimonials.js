@@ -1,4 +1,4 @@
-import Slider from "react-slick";
+import Carousel from "react-elastic-carousel";
 import './testimonials.scss'
 import Charlez from  '../../../assets/images/Charlez.webp'
 import Jesica from  '../../../assets/images/Jesica.webp'
@@ -6,18 +6,18 @@ import John from  '../../../assets/images/John.webp'
 
 function Testimonials () {
 
-    const settings = {
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1
-    };
+    const breakPoints = [
+        { width: 1, itemsToShow: 1 },
+        { width: 550, itemsToShow: 1 },
+        { width: 768, itemsToShow: 1 },
+        { width: 1200, itemsToShow: 1 },
+    ];
 
      return (
          <div className="testimonials">
              <div className="testimonials__container">
                  <h2 className="testimonials__title">TESTIMONIALS</h2>
-                 <Slider className="testimonials__slider" {...settings}>
+                 <Carousel className="testimonials__slider" breakPoints={breakPoints}>
                      <div className="testimonials__slider-content">
                          <p className="testimonials__slider-paragraph">
                              Woven silk pyjamas exchanged for blue quartz.
@@ -62,7 +62,7 @@ function Testimonials () {
                              Charlize Theron
                          </span>
                      </div>
-                 </Slider>
+                 </Carousel>
              </div>
          </div>
      )
