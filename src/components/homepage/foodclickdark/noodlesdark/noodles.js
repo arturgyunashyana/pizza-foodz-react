@@ -81,15 +81,16 @@ export default function Noodles({selectedCategory}) {
     return (
         <>
         <div className="slider">
-            <Carousel breakPoints={breakPoints}>
-                {filteredNoodles.map(item => {
-                    return (
-                        <div className="slider__content">
+            <div className="slider__container">
+                <Carousel breakPoints={breakPoints}>
+                    {filteredNoodles.map(item => {
+                        return (
+                            <div className="slider__content">
 
-                            <div className="slider__info">
-                                <div className="slider__image">
-                                    <img src={item.image} />
-                                    <div className="clickSearch">
+                                <div className="slider__info">
+                                    <div className="slider__image">
+                                        <img src={item.image} />
+                                        <div className="clickSearch">
                                     <span
                                         className="clickSearch__icon"
                                         onClick={() => toggle(item)}
@@ -97,43 +98,44 @@ export default function Noodles({selectedCategory}) {
                                         <i className="fas fa-search"></i>
                                     </span>
 
-                                        <span className="clickSearch__icon">
+                                            <span className="clickSearch__icon">
                                         <i className="fas fa-heart"></i>
                                     </span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="slider__row">
-                                    <a href="#" className="slider__row-title">
-                                        {item.name}
-                                    </a>
-                                </div>
-                                <div className="slider__row-text">
-                                    <p className="slider__row-paragraph">
-                                        {item.description}
-                                    </p>
-                                </div>
-                                <div className="slider__row-more">
+                                    <div className="slider__row">
+                                        <a href="#" className="slider__row-title">
+                                            {item.name}
+                                        </a>
+                                    </div>
+                                    <div className="slider__row-text">
+                                        <p className="slider__row-paragraph">
+                                            {item.description}
+                                        </p>
+                                    </div>
+                                    <div className="slider__row-more">
                                             <span className="slider__row-addFirst">
 
                                             </span>
-                                    <span className="slider__row-addSecond">
+                                        <span className="slider__row-addSecond">
 
                                             </span>
-                                </div>
-                                <span className="slider__row-price">
+                                    </div>
+                                    <span className="slider__row-price">
                                             {item.price}
                                 </span>
-                                <div className='slider__submit'>
-                                    <button type="button" className="slider__btn">
-                                        <i className="cart fas fa-shopping-bag"></i>
-                                        Add to Cart
-                                    </button>
+                                    <div className='slider__submit'>
+                                        <button type="button" className="slider__btn">
+                                            <i className="cart fas fa-shopping-bag"></i>
+                                            Add to Cart
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    )
-                })}
-            </Carousel>
+                        )
+                    })}
+                </Carousel>
+            </div>
         </div>
         {modal && (
             <div className="dialog" onClick={() => setModal(false)}>

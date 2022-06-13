@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.scss';
+import logoFooter from '../../assets/images/logo-footer.svg';
 
 const Footer = () => {
   return (
@@ -7,7 +8,7 @@ const Footer = () => {
       <div className="footer__container">
         <div className="footer__content">
           <div className="footer__item">
-            <img src='https://parkofideas.com/foodz/demo1/wp-content/uploads/2019/03/demo1-0616827188-1.svg' />
+            <img className="logo-footer" src={logoFooter} alt='logoFooter' />
             <div className="footer__phonevolume">
               <i className="fas fa-phone-volume"></i>
               1-800-312-2121

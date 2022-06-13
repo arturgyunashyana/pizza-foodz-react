@@ -95,8 +95,10 @@
     }
     &__fon {
         .site-logo {
-            width: 52px;
-            height: 40px;
+            @media (max-width: 760px) {
+                width: 52px;
+                height: 40px;
+            }
         }
     }
     &__container-menu {

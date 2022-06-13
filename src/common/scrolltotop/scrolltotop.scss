@@ -12,10 +12,15 @@
     @media (max-width: 760px) {
         right: 20px;
         bottom: 20px;
+        width: 35px;
+        height: 35px;
     }
     #arrow-black{
         font-size: 20px;
         color:#000;
+        @media (max-width: 760px) {
+            font-size: 15px;
+        }
     }
 }
 

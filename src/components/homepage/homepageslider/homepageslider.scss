@@ -1,9 +1,15 @@
+.slider {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .animate-slider {
   width: 100%;
-  min-height: 700px;
-  position: relative;
-  overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+  &__container-fluid {
+    width: 100%;
+  }
   .slide {
     width: 100%;
     height: 100%;

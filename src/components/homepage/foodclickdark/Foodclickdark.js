@@ -13,6 +13,11 @@ import './slick.css'
 const Foodclickdark = () => {
     const [selectedTab, setSelectedTab] = useState('burgers');
     const [selectedCategory, setSelectedCategory] = useState('all');
+    const [toggleState, setToggleState] = useState(1);
+
+    const toggleTab = (index) => {
+        setToggleState(index)
+    }
 
     return (
         <>
@@ -20,27 +25,30 @@ const Foodclickdark = () => {
                 <div className="foodTabs__container">
                     <div className="foodTabs__burger-list">
                         <button
-                                className="foodTabs__tab"
-                                onClick={() => {setSelectedTab('burgers');
-                                setSelectedCategory('all')}}
+                                className={toggleState === 1 ? "tabs-active" : "foodTabs__tab"}
+                                onClick={() => {setSelectedTab('burgers')
+                                setSelectedCategory('all') || toggleTab(1)}}
                         >
                             Burgers
                         </button>
                         <button
-                            className="foodTabs__tab"
-                            onClick={() => {setSelectedTab('pizza'); setSelectedCategory('all')}}
+                                className={toggleState === 2 ? "tabs-active" : "foodTabs__tab"}
+                                onClick={() => {setSelectedTab('pizza')
+                                setSelectedCategory('all') || toggleTab(2) }}
                         >
                             Pizza
                         </button>
                         <button
-                            className="foodTabs__tab"
-                            onClick={() => {setSelectedTab('sushi'); setSelectedCategory('all')}}
+                                className={toggleState === 3 ? "tabs-active" : "foodTabs__tab"}
+                                onClick={() => {setSelectedTab('sushi')
+                                setSelectedCategory('all') || toggleTab(3)}}
                         >
                             Sushi
                         </button>
                         <button
-                            className="foodTabs__tab"
-                            onClick={() => {setSelectedTab('noodlesblack'); setSelectedCategory('all')}}
+                                className={toggleState === 4 ? "tabs-active" : "foodTabs__tab"}
+                                onClick={() => {setSelectedTab('noodlesblack')
+                                setSelectedCategory('all') || toggleTab(4)}}
                         >
                             Noodles
                         </button>

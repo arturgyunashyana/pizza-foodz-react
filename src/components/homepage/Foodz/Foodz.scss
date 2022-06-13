@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,800;1,100;1,300&family=Roboto+Condensed&family=Source+Sans+3:ital,wght@1,500;1,700&display=swap');
 
-.foodRestaurant{
+.foodRestaurant {
     width: 100%;
     position: relative;
     background-image: url("../../../assets/images/greyimg.jpg");
@@ -19,6 +19,21 @@
         padding-top:50px;
         color:#fff;
         margin-bottom: 50px;
+        &:before {
+            content:"";
+            background-image: url("../../../assets/images/orangearrow.svg");
+            width: 68px;
+            height: 15px;
+            background-repeat: repeat-x;
+            background-position: left top;
+            background-size: 15px 6px;
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            right: 50%;
+            margin-left: -22px;
+            display: block;
+        }
         @media (max-width: 760px) {
             margin-bottom: 10px;
         }

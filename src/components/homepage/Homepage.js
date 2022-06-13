@@ -7,8 +7,15 @@ import Blogscale from "./Blogscale/Blogscale";
 import Foodparallax from "./Foodparallax/Foodparallax";
 import FoodRestaurant from "./Foodz/FoodRestaurant";
 import Testimonials from "./TestimonialsSlider/Testimonials";
+import AnimeEffect from "./AnimeEffect/AnimeEffect";
+import WeRecommend from "./WeRecommend/WeRecommend";
+import OurLimited from "./OurLimited/OurLimited";
+import BlogPosts from "./BlogPosts/BlogPosts";
+import HomeIcons from "./HomeIcons/HomeIcons";
+import Subscribe from "./Subscribe/Subscribe";
 
 const Homepage = () => {
+
   return (
     <div className='homepage'>
         <HomepageSlider />
@@ -18,6 +25,12 @@ const Homepage = () => {
         <Foodparallax />
         <FoodRestaurant />
         <Testimonials />
+        <AnimeEffect />
+        <WeRecommend />
+        <OurLimited />
+        <BlogPosts />
+        <HomeIcons />
+        <Subscribe />
     </div>
   )
 }

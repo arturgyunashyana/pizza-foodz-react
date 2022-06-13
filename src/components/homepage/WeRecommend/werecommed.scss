@@ -1,0 +1,17 @@
+.WeRecommend {
+  width: 100%;
+  margin: 90px 0;
+  &__container {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+  &__title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 40px;
+    color: #fff;
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 0.1em;
+    margin-bottom: 50px;
+  }
+}
